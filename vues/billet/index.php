@@ -5,7 +5,8 @@ foreach($billets as $billet) :
     <li>
 
         <a href="<?php echo $billet['titre']; ?>"><?php echo $billet['titre']; ?></a>
-		(<?php echo $billet['total']; ?> billets vus<?php echo ($billet['total'] > 1 ? 's' : ''); ?>) — <a href="?action=edit&id=<?php echo $billet['id']; ?>">Modifier</a> — <a href="?action=stats&id=<?php echo $billet['id']; ?>"><img src="vues/billet/stats.png" alt="Statistiques" /></a><br />
+		(<?php echo $billet['total']; ?> billets vus<?php echo ($billet['total'] > 1 ? 's' : ''); ?>) — <a href="?action=edit&id=<?php echo $billet['id']; ?>">Modifier</a> — 
+		<a href="?action=billets&id=<?php echo $billet['id']; ?>"><img src="vues/billet/stats.png" alt="Statistiques" /></a><br />
 		<?php echo $billet['contenu']; ?> — <em>ajoutée le <?php echo $billet['date']; ?></em>
         <p><b><?php echo $billet['contenu']; ?></b></p>
 	<!-- Suppression billet --> 

@@ -30,10 +30,11 @@ else if ($_GET != array()) {
     // il faut donc rediriger vers l'URL originale
     $id = key($_GET);
     if (is_numeric($id)) {
-        // on récupère l'URL d'origine
+        // on récupère le billet d'origine
         $billet = get_billet_by_id($id);
         // compteur de statistiques à mettre à jour
         //ajouter_billet($id);
+		ajouter_tag_billet($id);
         // redirection
         header('Location: ' . $billet['originale']);
         exit;
@@ -47,8 +48,8 @@ else if ($_GET != array()) {
     else if ($_GET['action'] == 'tag_billet') {
         # Affichage des tags de billets
         $vue = 'tag_billet';
-        $tag_billet = get_tag_billet_by_billet_id(intval($_GET['billet_id']));
-        $libelle = get_libelles_by_id(intval($_GET['id']));
+        $tag_billet = get_tag_billet_by_billet_id(intval($_GET['id']));
+        $libelles = get_libelles_by_id(intval($_GET['id']));
     } 
 	}
 	
